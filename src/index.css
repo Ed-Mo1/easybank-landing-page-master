@@ -1,0 +1,234 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --main-gradiant: linear-gradient(91deg, #31d35c 0%, #2bb7da 100%);
+  --main-gradiant-hover: linear-gradient(
+    91deg,
+    rgba(49, 211, 92, 0.5) 0%,
+    rgba(43, 183, 218, 0.5) 100%
+  );
+
+  --green-color: #31d35c;
+  --black-color: #000000;
+  --black-color02: #2d314e;
+  --white-2: #f4f5f7;
+  --gray-color: #777777;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+section:not(:nth-child(1)) {
+  padding: 4.5rem 0;
+}
+button,
+button:focus,
+input,
+input:focus {
+  outline: none;
+  background-color: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+main {
+  overflow: hidden;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.section-title {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 150%;
+}
+.card {
+  border: none;
+  height: 100%;
+}
+.content {
+  padding-top: 4rem;
+}
+/* nav */
+header {
+  height: 64px;
+  background-color: #fff;
+  position: relative;
+  z-index: 9999;
+}
+.nav {
+  gap: 32px;
+}
+
+.nav-link {
+  padding-block: 10px;
+  width: fit-content;
+  position: relative;
+  color: var(--gray-color);
+}
+.nav-link.active {
+  color: var(--black-color);
+}
+
+.nav-link::before {
+  position: absolute;
+  content: "";
+  transition: width 0.5s ease;
+  width: 0;
+  height: 3px;
+  background-image: var(--main-gradiant);
+  bottom: 0;
+  left: 0;
+}
+.nav-link.active::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-image: var(--main-gradiant);
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+#close-nav {
+  display: none;
+}
+
+.main-btn {
+  width: 174px;
+  box-shadow: 0px 0px 16px 0px rgba(51, 211, 94, 0.5);
+  height: 43px;
+  background-image: var(--main-gradiant);
+  transition: all 0.5s ease;
+}
+.main-btn:hover {
+  box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  background-image: var(--main-gradiant-hover);
+}
+
+/* home */
+
+#home {
+  background: url(../images/bg-intro-desktop.svg) no-repeat 35vw -30vh;
+  background-size: cover;
+  position: relative;
+  height: 70vh;
+}
+.home-title {
+  font-size: 3.375rem;
+  font-weight: 300;
+  line-height: 54px;
+}
+.home-subtitle {
+  line-height: 27px;
+  font-size: 1.125rem;
+}
+
+#home-image {
+  transform: translate(30%, 5%);
+}
+
+/* about */
+
+#about {
+  background-color: var(--white-2);
+}
+#about-content .card .card-title {
+  font-size: 1.5rem;
+  line-height: 24px;
+}
+#about-content .card .card-text {
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+#about-content .card {
+  background-color: var(--white-2);
+}
+
+/* articles */
+
+#articles-content .card img {
+  height: 200px;
+}
+#articles-content .card-subtitle {
+  font-size: 0.75rem;
+}
+#articles-content .card .card-title {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.5s ease;
+  line-height: 20px;
+}
+#articles-content .card .card-title:hover {
+  color: var(--green-color);
+}
+#articles-content .card .card-text {
+  font-size: 0.875rem;
+  line-height: 21px;
+}
+
+footer {
+  background-color: var(--black-color02);
+}
+#footer-content {
+  padding: 33px 0 44px;
+  min-height: 181px;
+}
+#footer-content .col a:hover {
+  color: var(--green-color) !important;
+  transition: 0.5s ease;
+}
+#footer-content .icons a {
+  font-size: 21px;
+}
+
+@media (width<992px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
+  #articles-content .card img {
+    height: fit-content;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  #home {
+    background-image: url(../images/bg-intro-mobile.svg);
+    background-position: center -40vh;
+    height: auto;
+  }
+  #home #home-text {
+    order: 44 !important;
+    margin: 20px auto;
+  }
+  #home-image {
+    transform: translate(0%, -30%);
+  }
+  .nav {
+    gap: 5px;
+    box-shadow: 0px 108px 200px 10px #222;
+    padding: 30px;
+    margin: 25px;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+  }
+}
+
+@media (width<768px) {
+  .content {
+    padding-top: 3rem;
+  }
+}
